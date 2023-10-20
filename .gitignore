@@ -1,4 +1,4 @@
-/node_modules
-dev.env
-logfile.logfile
+node_modules
+*.env
+logfile.log
 unhandledExceptions.log

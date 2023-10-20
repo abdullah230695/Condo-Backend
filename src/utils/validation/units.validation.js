@@ -16,4 +16,15 @@ function validatePostUnit(data) {
   return schema.validate(data);
 }
 
-module.exports = { validatePostUnit };
+function validateUpdateUnit(data) {
+  const schema = Joi.object({
+    id: Joi.number().required(),
+    unit_doc_attachment: Joi.string().min(10).max(255),
+    parking_slot_count: Joi.string().max(50).required(),
+    parking_alloc_nos: Joi.object().required(),
+  });
+
+  return schema.validate(data);
+}
+
+module.exports = { validatePostUnit, validateUpdateUnit };

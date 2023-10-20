@@ -57,4 +57,36 @@ const createUnit = (req, callback) => {
   }
 };
 
-module.exports = { createUnit };
+const updateUnit = (req, callback) => {
+  const { id, unit_doc_attachment, parking_slot_count, parking_alloc_nos } =
+    req.body;
+
+  const values = {
+    unit_doc_attachment,
+    parking_slot_count,
+    parking_alloc_nos: JSON.stringify(parking_alloc_nos),
+  };
+
+  const pool = connect();
+
+  try {
+    pool.query(ADMIN_QUERY.UPDATE_UNIT, [values, id], (err, results) => {
+      if (err) {
+        winston.error("error : ", err);
+        const msg = resFailure(400, constants.ERROR_MSG);
+        callback({ status: false, data: msg });
+        return;
+      }
+      winston.info("unit updated : ", results);
+
+      const msg = resSuccess(200, "unit updated");
+
+      callback({ status: true, data: msg });
+    });
+  } catch (error) {
+  } finally {
+    pool.end();
+  }
+};
+
+module.exports = { createUnit, updateUnit };
