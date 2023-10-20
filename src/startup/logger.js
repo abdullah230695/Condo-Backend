@@ -10,7 +10,6 @@ module.exports = function () {
   //catch errors outside of express
   process.on("unhandledRejection", (exception) => {
     winston.error(exception);
-    throw exception;
   });
 
   winston.add(winston.transports.File, {
