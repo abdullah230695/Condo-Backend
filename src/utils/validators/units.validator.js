@@ -27,4 +27,13 @@ function validateUpdateUnit(data) {
   return schema.validate(data);
 }
 
-module.exports = { validatePostUnit, validateUpdateUnit };
+function validateLogin(data) {
+  const schema = Joi.object({
+    username: Joi.string().required(),
+    password: Joi.string().max(255).required()
+  });
+
+  return schema.validate(data);
+}
+
+module.exports = { validatePostUnit, validateUpdateUnit, validateLogin };

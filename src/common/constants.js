@@ -1,0 +1,67 @@
+//Common messages
+module.exports.constants = {
+  ERROR_MSG: "Something went wrong",
+  NOT_EXIST_MSG: "No data found",
+  USERNAME_NOT_REGISTERED: "username not registered",
+  INCORRECT_USERNAME_OR_PASSWORD: "Incorrect username or password",
+  TYPE_STRING: "STRING",
+  TYPE_ARRAY: "ARRAY",
+  TYPE_JSON: "JSON",
+  ROLE_ADMIN: "admin",
+};
+
+// API status code
+module.exports.status_code = {
+  Informational: {
+    Continue: 100,
+    Switching_Protocols: 101,
+    Processing: 102,
+  },
+  Success: {
+    OK: 200,
+    Created: 201,
+    Accepted: 202,
+    No_Content: 204,
+    Reset_Content: 205,
+  },
+  Redirection: {
+    Multiple_Choices: 300,
+    Moved_Permanently: 301,
+    Found: 302,
+    See_Other: 303,
+    Not_Modified: 304,
+    Temporary_Redirect: 307,
+    Permanent_Redirect: 308,
+  },
+  Client_Errors: {
+    Bad_Request: 400,
+    Unauthorized: 401,
+    Payment_Required: 402,
+    Forbidden: 403,
+    Not_Found: 404,
+    Method_Not_Allowed: 405,
+    Not_Acceptable: 406,
+    Proxy_Authentication_Required: 407,
+    Request_Timeout: 408,
+    Conflict: 409,
+    Gone: 410,
+    Length_Required: 411,
+    Precondition_Failed: 412,
+    Payload_Too_Large: 413,
+    URI_Too_Long: 414,
+    Unsupported_Media_Type: 415,
+    Range_Not_Satisfiable: 416,
+    Expectation_Failed: 417,
+    Unprocessable_Entity: 422,
+    Too_Many_Requests: 429,
+    Request_Header_Fields_Too_Large: 431,
+  },
+  Server_Errors: {
+    Internal_Server_Error: 500,
+    Not_Implemented: 501,
+    Bad_Gateway: 502,
+    Service_Unavailable: 503,
+    Gateway_Timeout: 504,
+    HTTP_Version_Not_Supported: 505,
+  },
+};
